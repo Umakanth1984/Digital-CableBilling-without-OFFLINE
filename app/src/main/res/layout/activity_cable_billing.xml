@@ -1,0 +1,185 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_bg"
+    tools:context=".activities.CableBillingActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_horizontal_margin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.digitalrupay.customviews.CustomTextView
+                style="@style/CenturyGothic_regular_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome"
+                android:textSize="25sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:orientation="vertical">
+
+                <com.digitalrupay.customviews.CustomTextView
+                    android:id="@+id/tvEmpName"
+                    style="@style/CenturyGothic_regular_font"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Umakanth"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25sp" />
+
+                <com.digitalrupay.customviews.CustomTextView
+                    android:id="@+id/tvEmpMobile"
+                    style="@style/CenturyGothic_bold_font"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9849835128"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:layout_marginBottom="10dp">
+
+            <FrameLayout
+                android:id="@+id/fl_collections"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:onClick="navigateToCollections">
+
+                <ImageView
+                    android:id="@+id/iv_collections"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_white_hexagon" />
+
+                <com.digitalrupay.customviews.CustomTextView
+                    android:id="@+id/tv_collections"
+                    style="@style/CenturyGothic_bold_font"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/collections"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/fl_complaints"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:onClick="navigateToComplaints">
+
+                <ImageView
+                    android:id="@+id/iv_complaints"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_white_hexagon" />
+
+                <com.digitalrupay.customviews.CustomTextView
+                    android:id="@+id/tv_complaints"
+                    style="@style/CenturyGothic_bold_font"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/complaints"
+                    android:textColor="@color/red"
+                    android:textSize="15sp" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <FrameLayout
+            android:id="@+id/fl_change_mobile_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:onClick="navigateToChangeMobileNumber">
+
+            <ImageView
+                android:id="@+id/iv_change_mobile_number"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_white_hexagon" />
+
+            <com.digitalrupay.customviews.CustomTextView
+                android:id="@+id/tv_change_mobile_number"
+                style="@style/CenturyGothic_bold_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/change_mobile_number"
+                android:textColor="@color/red"
+                android:textSize="15sp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_bluetooth_devices_settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:onClick="navigateToBluetoothdevicessettings">
+
+            <ImageView
+                android:id="@+id/iv_bluetooth_devices_settings"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_white_hexagon" />
+
+            <com.digitalrupay.customviews.CustomTextView
+                android:id="@+id/tv_bluetooth_devices_settings"
+                style="@style/CenturyGothic_bold_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/settings"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+        </FrameLayout>
+</LinearLayout>
+    </LinearLayout>
+
+    <include layout="@layout/sign_out" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+</FrameLayout>

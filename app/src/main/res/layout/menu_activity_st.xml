@@ -1,0 +1,219 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.digitalrupay.customviews.CustomTextView
+            android:id="@+id/tvPrintInvoice"
+            style="@style/CenturyGothic_bold_font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:visibility="gone"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/reverseFeed_Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Reverse Feed " />
+
+            <Button
+                android:id="@+id/LargeData_Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="   Print   " />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/LineFeed_Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="     Line Feed     " />
+
+            <Button
+                android:id="@+id/Btn_Open"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Open" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/Btn_Close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Close" />
+
+            <Button
+                android:id="@+id/Settings_Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="        Settings     " />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_payment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/button_frame"
+            android:onClick="redirectToCustomers"
+            android:padding="5dp">
+
+            <com.digitalrupay.customviews.CustomTextView
+                android:id="@+id/tvPaymentName"
+                style="@style/CenturyGothic_regular_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/redirect_customers"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </FrameLayout>
+    </LinearLayout>
+    <!--<RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:scaleType="centerCrop"
+        android:tileMode="repeat">
+
+        <Button
+            android:id="@+id/reverseFeed_Btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/font_Btn"
+            android:layout_alignBottom="@+id/font_Btn"
+            android:layout_alignParentRight="true"
+            android:text=" Reverse Feed " />
+
+        <Button
+            android:id="@+id/font_Btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="100dp"
+            android:visibility="invisible"
+            android:text="         Font        " />
+
+        <Button
+            android:id="@+id/ImagePrint_Btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/font_Btn"
+            android:visibility="invisible"
+            android:text="   LOGO Print   " />
+
+        <Button
+            android:id="@+id/LargeData_Btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/ImagePrint_Btn"
+            android:layout_alignBottom="@+id/ImagePrint_Btn"
+            android:layout_alignLeft="@+id/reverseFeed_Btn"
+            android:text="   Print   " />
+
+
+        <Button
+            android:id="@+id/LineFeed_Btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignRight="@+id/font_Btn"
+            android:layout_below="@+id/ImagePrint_Btn"
+            android:text="     Line Feed     " />
+
+        <EditText
+            android:id="@+id/ET_print"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/Btn_Open"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/Btn_Close"
+            android:ems="10"
+            android:hint="Enter Text To Print"
+            android:visibility="gone">
+
+            <requestFocus />
+        </EditText>
+
+        <com.digitalrupay.customviews.CustomTextView
+            android:id="@+id/tvPrintInvoice"
+            style="@style/CenturyGothic_bold_font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/Btn_Open"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/Btn_Close"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/Btn_Open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/reverseFeed_Btn"
+            android:layout_alignParentLeft="true"
+            android:layout_alignRight="@+id/font_Btn"
+            android:text="Open" />
+
+        <Button
+            android:id="@+id/Btn_Close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/reverseFeed_Btn"
+            android:layout_alignLeft="@+id/reverseFeed_Btn"
+            android:layout_alignRight="@+id/LargeData_Btn"
+            android:text="Close" />
+
+        <Button
+            android:id="@+id/Barcode_Btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/LineFeed_Btn"
+            android:layout_alignBottom="@+id/LineFeed_Btn"
+            android:layout_alignLeft="@+id/LargeData_Btn"
+            android:layout_alignParentRight="true"
+            android:visibility="invisible"
+            android:text="        Barcode      " />
+
+        <Button
+            android:id="@+id/Settings_Btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/LineFeed_Btn"
+            android:layout_centerHorizontal="true"
+            android:text="        Settings     " />
+
+    </RelativeLayout>-->
+
+</ScrollView>

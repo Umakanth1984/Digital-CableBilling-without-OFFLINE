@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_horizontal_margin">
+
+        <com.digitalrupay.customviews.CustomTextView
+            android:id="@+id/tvSuccessMsg"
+            style="@style/CenturyGothic_bold_font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Successfully Your Complaint Registered"
+            android:textColor="@color/green"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <com.digitalrupay.customviews.CustomTextView
+                style="@style/CenturyGothic_regular_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:text="Complaint ID : "
+                android:textColor="@color/colorPrimaryDark" />
+
+            <com.digitalrupay.customviews.CustomTextView
+                android:id="@+id/txtComplaintID"
+                style="@style/CenturyGothic_bold_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight=".5"
+                android:textColor="@color/colorPrimaryDark" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <com.digitalrupay.customviews.CustomTextView
+                style="@style/CenturyGothic_regular_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:text="Complaint Message : "
+                android:textColor="@color/colorPrimaryDark" />
+
+            <com.digitalrupay.customviews.CustomTextView
+                android:id="@+id/txtComplaintMessage"
+                style="@style/CenturyGothic_bold_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight=".5"
+                android:textColor="@color/colorPrimaryDark" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_complaints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/button_frame"
+            android:onClick="redirectToComplaints"
+            android:padding="5dp">
+
+            <com.digitalrupay.customviews.CustomTextView
+                android:id="@+id/tvRedirectToComplaint"
+                style="@style/CenturyGothic_regular_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/redirect_complaints"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </FrameLayout>
+
+        <!--<FrameLayout
+            android:id="@+id/fl_print"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_frame"
+            android:onClick="printInvoice"
+            android:padding="5dp">
+
+            <com.digitalrupay.customviews.CustomTextView
+                android:id="@+id/tvPrintInvoice"
+                style="@style/CenturyGothic_regular_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/print_invoice"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </FrameLayout>-->
+    </LinearLayout>
+
+    <include layout="@layout/sign_out" />
+</FrameLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_gravity="bottom"
+    android:background="@color/rectanguler_bordercolor">
+
+    <ImageView
+        android:id="@+id/iv_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:layout_marginLeft="20dp"
+        android:onClick="redirectToHomeActivity"
+        android:src="@drawable/ic_user" />
+
+    <ImageView
+        android:id="@+id/iv_sign_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|right"
+        android:layout_marginRight="20dp"
+        android:onClick="redirectToLoginActivity"
+        android:src="@drawable/ic_signout" />
+</FrameLayout>

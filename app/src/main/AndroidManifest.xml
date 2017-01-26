@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.digitalrupay">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <application
+        android:name=".DigitalRupayApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_digital_rupay"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activities.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_live_FUvOIwfOBMSlWM"
+            />
+        <activity
+            android:name=".activities.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.FeeListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.FeeListDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.LoginTypeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".activities.HomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".activities.CableBillingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.CustomerPaymentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.PaymentSuccessActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.ComplaintsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.CollectionsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.PaymentsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.ChangeMobileNumberActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.UpdateComplaintsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.TodayCollectionsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.Menu_2ST_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.SettingsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.ComplaintSuccessActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.Customer.CustomerLogin"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.Customer.CustomerHome"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.Customer.CustomerPayment"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.Customer.ComplaintsHistory"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.Customer.PaymentHistory"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.Customer.UpdateMobile"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activities.SummaryActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activities.OutStationActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activities.EmpCollectionActivity"
+            android:screenOrientation="portrait" ></activity>
+        <activity android:name=".payment.OnlinePaymentActivity"
+            android:screenOrientation="portrait" ></activity>
+        <activity android:name=".activities.Customer.CustomerPaymentSuccessActivity"
+            android:screenOrientation="portrait" ></activity>
+    </application>
+
+</manifest>

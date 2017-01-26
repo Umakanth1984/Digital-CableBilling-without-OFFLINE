@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/rectanguler_bordercolor">
+
+        <TextView
+            android:id="@+id/txtCanteenFee_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".1"
+            android:gravity="center"
+            android:text="@string/canteen_fee"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/txtLateFee_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".1"
+            android:gravity="center"
+            android:text="@string/late_fee"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/txtOneTimeFee_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".1"
+            android:gravity="center"
+            android:text="@string/onetime_fee"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/txtAdmissionFee_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".1"
+            android:gravity="center"
+            android:text="@string/admission_fee"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/txtTotalFee_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".1"
+            android:gravity="center"
+            android:text="@string/total_fee"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/txtCanteenFee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".1"
+            android:gravity="center"
+            android:text="1000.00"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/txtLateFee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".1"
+            android:gravity="center"
+            android:text="1000.00"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/txtOneTimeFee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".1"
+            android:gravity="center"
+            android:text="1000.00"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/txtAdmissionFee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".1"
+            android:gravity="center"
+            android:text="1000.00"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/txtTotalFee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".1"
+            android:gravity="center"
+            android:text="1000.00"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+</LinearLayout>

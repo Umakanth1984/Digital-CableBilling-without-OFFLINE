@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical">
+
+        <com.digitalrupay.customviews.CustomTextView
+            style="@style/CenturyGothic_regular_font"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/green"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="@string/update_mobile_number"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="3dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            android:padding="5dp">
+
+            <EditText
+                android:id="@+id/searchCustomer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:gravity="center"
+                android:hint="Enter Customer ID / Mobile No"
+                android:imeOptions="actionSearch"
+                android:inputType="textCapCharacters"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+
+            <ImageView
+                android:id="@+id/imgSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:src="@android:drawable/ic_search_category_default" />
+        </LinearLayout>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_horizontal_margin">
+        <LinearLayout
+            android:id="@+id/ll_customer_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:orientation="vertical"
+            android:padding="@dimen/activity_horizontal_margin">
+
+            <com.digitalrupay.customviews.CustomTextView
+                android:id="@+id/txtName"
+                style="@style/CenturyGothic_bold_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/text_name_size" />
+
+            <com.digitalrupay.customviews.CustomTextView
+                android:id="@+id/txtAddress"
+                style="@style/CenturyGothic_bold_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <com.digitalrupay.customviews.CustomTextView
+                android:id="@+id/txtMobileNumber"
+                style="@style/CenturyGothic_bold_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <com.digitalrupay.customviews.CustomTextView
+                    style="@style/CenturyGothic_bold_font"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:text="Mobile No               : "
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="15sp" />
+                <EditText
+                    android:id="@+id/edt_change_mobile_number"
+                    style="@style/CenturyGothic_bold_font"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/search_edit_text_shape"
+                    android:gravity="center"
+                    android:textColor="@color/colorPrimaryDark" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <com.digitalrupay.customviews.CustomTextView
+                    style="@style/CenturyGothic_bold_font"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:text="MAC ID                    : "
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/edt_change_mac_id"
+                    style="@style/CenturyGothic_bold_font"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/search_edit_text_shape"
+                    android:gravity="center"
+                    android:textColor="@color/colorPrimaryDark" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <com.digitalrupay.customviews.CustomTextView
+                    style="@style/CenturyGothic_bold_font"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:text="STB NO                     : "
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/edt_change_stb_no"
+                    style="@style/CenturyGothic_bold_font"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/search_edit_text_shape"
+                    android:gravity="center"
+                    android:textColor="@color/colorPrimaryDark" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <com.digitalrupay.customviews.CustomTextView
+                    style="@style/CenturyGothic_bold_font"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:text="CARD NO                : "
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/edt_change_card_no"
+                    style="@style/CenturyGothic_bold_font"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/search_edit_text_shape"
+                    android:gravity="center"
+                    android:textColor="@color/colorPrimaryDark" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:visibility="gone">
+
+                <com.digitalrupay.customviews.CustomTextView
+                    style="@style/CenturyGothic_bold_font"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:text="Pending Amount    :"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/edt_pending_amount"
+                    style="@style/CenturyGothic_bold_font"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/search_edit_text_shape"
+                    android:gravity="center"
+                    android:textColor="@color/colorPrimaryDark" />
+            </LinearLayout>
+        </LinearLayout>
+        <FrameLayout
+            android:id="@+id/fl_change_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/button_frame"
+            android:onClick="updateMobile"
+            android:padding="10dp">
+
+            <com.digitalrupay.customviews.CustomTextView
+                android:id="@+id/tvOk"
+                style="@style/CenturyGothic_regular_font"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/ok"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </FrameLayout>
+    </LinearLayout>
+</ScrollView>
+    </LinearLayout>
+
+    <com.digitalrupay.customviews.CustomTextView
+        android:id="@+id/errMsg"
+        style="@style/CenturyGothic_regular_font"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="No Customer Found"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+    <include layout="@layout/sign_out" />
+</FrameLayout>

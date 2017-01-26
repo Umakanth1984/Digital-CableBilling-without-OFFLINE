@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ward_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/feed_card_view"
+        background="@drawable/card_border"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/rectanguler_bordercolor"
+        android:backgroundTint="@color/rectanguler_bordercolor"
+        card_view:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/imgArrow"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.digitalrupay.customviews.CustomTextView
+                        android:id="@+id/txtName"
+                        style="@style/CenturyGothic_regular_font"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/text_name_size" />
+
+                    <com.digitalrupay.customviews.CustomTextView
+                        android:id="@+id/txtAdmnNumber"
+                        style="@style/CenturyGothic_regular_font"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight=".5"
+                        android:gravity="right"
+                        android:orientation="vertical">
+
+                        <com.digitalrupay.customviews.CustomTextView
+                            style="@style/CenturyGothic_regular_font"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".5"
+                            android:gravity="center"
+                            android:text="Due Amount"
+                            android:textColor="@color/colorPrimaryDark" />
+
+                        <com.digitalrupay.customviews.CustomTextView
+                            android:id="@+id/txtSection"
+                            style="@style/CenturyGothic_regular_font"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_weight=".5"
+                            android:textColor="@color/colorPrimaryDark" />
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".1"
+                        android:background="@drawable/button_frame"
+                        android:padding="5dp">
+
+                        <com.digitalrupay.customviews.CustomTextView
+                            style="@style/CenturyGothic_regular_font"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/paynow"
+                            android:textColor="@color/white"
+                            android:textSize="15sp" />
+                    </FrameLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <com.digitalrupay.customviews.CustomTextView
+                android:id="@+id/txtStandard"
+                style="@style/CenturyGothic_regular_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/txtBranchName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark" />
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imgArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_gravity="right|center"
+            android:layout_marginRight="5dp"
+            android:src="@android:drawable/arrow_down_float" />
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

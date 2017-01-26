@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/rectanguler_bordercolor">
+
+        <TextView
+            android:id="@+id/txtTuitionFee_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".1"
+            android:gravity="center"
+            android:text="@string/tution_fee"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/txtTransportationFee_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".1"
+            android:gravity="center"
+            android:text="@string/transportaion_fee"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/txtLibraryFee_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".1"
+            android:gravity="center"
+            android:text="@string/library_fee"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/txtBooksFee_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".1"
+            android:gravity="center"
+            android:text="@string/books_fee"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/txtUniformFee_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".1"
+            android:gravity="center"
+            android:text="@string/uniform_fee"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/txtTuitionFee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".1"
+            android:gravity="center"
+            android:text="1000.00"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/txtTransportationFee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".1"
+            android:gravity="center"
+            android:text="1000.00"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/txtLibraryFee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".1"
+            android:gravity="center"
+            android:text="1000.00"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/txtBooksFee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".1"
+            android:gravity="center"
+            android:text="1000.00"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/txtUniformFee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".1"
+            android:gravity="center"
+            android:text="1000.00"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+</LinearLayout>

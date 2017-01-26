@@ -1,0 +1,84 @@
+<resources>
+    <string name="app_name">Digital Rupay</string>
+    <string name="fee">15000</string>
+    <string name="logout">Logout</string>
+    <string name="credit_card">Credit Card</string>
+    <string name="debit_card">Debit Card</string>
+    <string name="net_banking">Net Banking</string>
+    <string name="welcome_msg">Welcome To DigitalRupay World</string>
+    <string name="school">School Fee\nBilling</string>
+    <string name="temples_seva">Temple \nSeva</string>
+    <string name="apartment_seva">Gated \nCommunity</string>
+    <string name="cable_billing">Cable \nBilling</string>
+    <string name="paper_billing">Paper \nBilling</string>
+    <string name="school_fee_system">School Fee System</string>
+    <string name="parent_login">Parent \nLogin</string>
+    <string name="school_login">School \nLogin</string>
+    <string name="customer_login">Customer \nLogin</string>
+    <string name="agent_login">Agent \nLogin</string>
+    <string name="cable_billing_system">Cable Billing System</string>
+    <string name="employee_login">Employee \nLogin</string>
+    <string name="Apartment_billing_system">Gated Community Billing</string>
+    <string name="tution_fee">Tution Fee</string>
+    <string name="transportaion_fee">Trasportation Fee</string>
+    <string name="library_fee">Library Fee</string>
+    <string name="books_fee">Books Fee</string>
+    <string name="uniform_fee">Uniform Fee</string>
+    <string name="canteen_fee">Canteen Fee</string>
+    <string name="late_fee">Late Fee</string>
+    <string name="onetime_fee">Onetime Fee</string>
+    <string name="admission_fee">Admission Fee</string>
+    <string name="total_fee">Total Fee : </string>
+    <string name="paynow">Pay Now</string>
+    <string name="make_a_payment">Make A Payment</string>
+    <string name="redirect_customers">Redirect To Payment</string>
+    <string name="redirect_complaints">Redirect To Complaints</string>
+    <string name="add_complaint">Add Complaint</string>
+    <string name="update_complaint">Update Complaint</string>
+    <string name="collections">Collections</string>
+    <string name="complaints">Complaints</string>
+    <string name="change_mobile_number">Update \nCustomer Info</string>
+    <string name="settings">Printer \nSettings</string>
+    <string name="payments">Payments</string>
+    <string name="todays_collection">Today\'s \nCollection</string>
+    <string name="todays_collection1">Today\'s Collection</string>
+    <string name="ok">Ok</string>
+    <string name="update_mobile_number">Update Customer Info</string>
+    <string name="mobile_number">Mobile No :</string>
+    <string name="mac_id">MAC ID    :</string>
+    <string name="assigned_groups">Assigned Groups</string>
+    <string name="print_invoice">Print Invoice</string>
+    <string name="Payment_History">Payment \nHistory</string>
+    <string name="Complaints_History">Complaints \nHistory </string>
+    <string name="Payment">Current Due</string>
+    <string name="Customer_Update">Update  \nMobile No</string>
+    <string name="update_mobile_STB">Update Mobile Number</string>
+    <string name="STB_Number">STB Number</string>
+    <string name="Update">Update</string>
+    <string name="Collection">Total \nCollections</string>
+    <string name="OutStation">Total \nOutstanding</string>
+    <string name="Summary">Summary</string>
+    <string name="total_collections">Total Collections </string>
+    <string name="collections_details">Collections Details</string>
+    <string name="confirm">Confirm</string>
+    <string name="Cust_redirect_customers">Redirect To Dashbaord</string>
+    <string-array name="transaction_types">
+        <item>Cash</item>
+        <!--<item>Cheque</item>-->
+    </string-array>
+
+    <string-array name="complaint_status">
+        <item>Pending</item>
+        <item>Processing</item>
+        <item>Completed</item>
+    </string-array>
+    <string-array name="Customer_array">
+        <item>Mobile Number</item>
+        <item>STB NO</item>
+    </string-array>
+
+    <string name="CenturyGothicRegular_font">CenturyGothicRegular</string>
+    <string name="CenturyGothicBold_font">CenturyGothicBold</string>
+    <string name="CenturyGothicRegular_font_family">ttf</string>
+    <string name="action_settings">Settings</string>
+</resources>
