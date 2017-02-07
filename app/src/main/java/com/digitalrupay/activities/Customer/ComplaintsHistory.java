@@ -50,6 +50,7 @@ public class ComplaintsHistory extends BaseActivity implements  AsyncRequest.OnA
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complaintshisotry);
+        Log.d(WsUrlConstants.LOGIN_TYPE, loginType);
         Toolbar toolbar = (Toolbar) findViewById(R.id.custtoolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Complaints");

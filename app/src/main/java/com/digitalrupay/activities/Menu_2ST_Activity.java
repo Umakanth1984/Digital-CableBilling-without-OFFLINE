@@ -458,9 +458,9 @@ public class Menu_2ST_Activity extends Activity {
     }
 
     public void redirectToCustomers(View view) {
-        Intent customers = new Intent(this, PaymentsActivity.class);
-        customers.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(customers);
+//        Intent customers = new Intent(this, CableBillingActivity.class);
+//        customers.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+//        startActivity(customers);
         finish();
     }
 }

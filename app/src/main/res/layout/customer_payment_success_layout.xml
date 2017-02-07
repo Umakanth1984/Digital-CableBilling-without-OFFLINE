@@ -87,7 +87,7 @@
                 style="@style/CenturyGothic_regular_font"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/redirect_customers"
+                android:text="@string/redirect_customers_payment"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
         </FrameLayout>

@@ -31,7 +31,8 @@
     <string name="total_fee">Total Fee : </string>
     <string name="paynow">Pay Now</string>
     <string name="make_a_payment">Make A Payment</string>
-    <string name="redirect_customers">Redirect To Payment</string>
+    <string name="redirect_customers_payment">Redirect To Payment</string>
+    <string name="redirect_customers">Redirect To Dashboard</string>
     <string name="redirect_complaints">Redirect To Complaints</string>
     <string name="add_complaint">Add Complaint</string>
     <string name="update_complaint">Update Complaint</string>

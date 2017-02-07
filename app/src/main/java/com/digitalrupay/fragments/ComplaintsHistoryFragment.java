@@ -73,7 +73,6 @@ public class ComplaintsHistoryFragment extends Fragment implements View.OnClickL
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-
             case R.id.complaint_item:
                 ComplaintsDataModel complaintsDataModel = (ComplaintsDataModel) v.getTag();
                 Log.d("complaint id", complaintsDataModel.getComplaint_id());

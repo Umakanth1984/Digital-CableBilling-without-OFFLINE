@@ -60,9 +60,9 @@ public class PaymentsActivity extends BaseActivity implements AsyncRequest.OnAsy
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_customers);
         setTitle("Customer Payment", true);
+        getBusinessLogo();
         PaymentList = (RecyclerView)findViewById(R.id.PaymentList);
         tvError = (TextView) findViewById(R.id.errMsg);
-
         ivSearch = (ImageView) findViewById(R.id.imgSearch);
         ivSearch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,10 +115,10 @@ public class PaymentsActivity extends BaseActivity implements AsyncRequest.OnAsy
         Log.d("search customer: ", customerID);
         AsyncRequest asyncRequest = new AsyncRequest(this, "GET", new ArrayList<NameValuePair>(), "Fetching Data..");
         asyncRequest.execute(WsUrlConstants.customerDetailsUrl.replace(WsUrlConstants.CUSTOMER_ID, customerID).replace(WsUrlConstants.EMPLOYEE_ID, employeeId));
-       if(loginType.equals(loginTypes[4])) {
-           AsyncRequestEx asyncRequest1 = new AsyncRequestEx(this, "GET", new ArrayList<NameValuePair>(), "Fetching Data..");
-           asyncRequest1.execute(WsUrlConstants.events_info);
-       }
+        if(loginType.equals(loginTypes[4])) {
+            AsyncRequestEx asyncRequest1 = new AsyncRequestEx(this, "GET", new ArrayList<NameValuePair>(), "Fetching Data..");
+            asyncRequest1.execute(WsUrlConstants.events_info);
+        }
     }
     @Override
     public void asyncResponse1(String response) {
@@ -158,12 +158,13 @@ public class PaymentsActivity extends BaseActivity implements AsyncRequest.OnAsy
         parseCustomerDetails(response);
     }
     void parseCustomerDetails(String response) {
-        try {
-            JSONObject customersObj = new JSONObject(response);
-            Iterator<String> keys = customersObj.keys();
-            String message = customersObj.getString("message");
-            String text = customersObj.getString("text");
-            if (serviceRequest == 1) {
+
+        if (serviceRequest == 1) {
+            try {
+                JSONObject customersObj = new JSONObject(response);
+                Iterator<String> keys = customersObj.keys();
+                String message = customersObj.getString("message");
+                String text = customersObj.getString("text");
                 if (message.equalsIgnoreCase("success")) {
                     while (keys.hasNext()) {
                         String key = keys.next();
@@ -175,8 +176,16 @@ public class PaymentsActivity extends BaseActivity implements AsyncRequest.OnAsy
                         }
                     }
                 }
-                    setCustomerData();
-            } else if (serviceRequest == 2) {
+                setCustomerData();
+            }catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else if (serviceRequest == 2) {
+            try {
+                JSONObject customersObj = new JSONObject(response);
+                Iterator<String> keys = customersObj.keys();
+                String message = customersObj.getString("message");
+                String text = customersObj.getString("text");
                 if (message.equalsIgnoreCase("success")) {
                     Toast.makeText(this, "Payment Success", Toast.LENGTH_SHORT).show();
                     CustomerPaymentSuccessModel customerPaymentSuccessModel = null;
@@ -198,7 +207,29 @@ public class PaymentsActivity extends BaseActivity implements AsyncRequest.OnAsy
                 } else {
                     Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
                 }
-            } else {
+            }catch (Exception e) {
+                e.printStackTrace();
+            }
+        }else if(serviceRequest == 3){
+            try{
+                JSONObject customersObj = new JSONObject(response);
+                JSONObject inOBJ=customersObj.getJSONObject("0");
+                String address1=inOBJ.getString("address1");
+                String city=inOBJ.getString("city");
+                JSONObject businessObj = new JSONObject(customersObj.getJSONObject("0").toString());
+                WsUrlConstants.SERVICES_name = businessObj.getString("business_name");
+                WsUrlConstants.SERVICE_MOBILE_NUMBER = businessObj.getString("mobile");
+                WsUrlConstants.Adderss=address1+"\n "+city;
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        else {
+            try {
+                JSONObject customersObj = new JSONObject(response);
+                Iterator<String> keys = customersObj.keys();
+                String message = customersObj.getString("message");
+                String text = customersObj.getString("text");
                 if (message.equalsIgnoreCase("success")) {
                     AlertDialog messageDialog = new AlertDialog.Builder(this).setTitle("Success")
                             .setMessage("Next Payment Date Updated Successfully")
@@ -213,10 +244,9 @@ public class PaymentsActivity extends BaseActivity implements AsyncRequest.OnAsy
                             ).setCancelable(false).show();
                 }
                 Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 
@@ -228,17 +258,17 @@ public class PaymentsActivity extends BaseActivity implements AsyncRequest.OnAsy
 
     }
     public void sendPayment(final String custId, final String amount, final String trxnType, final String chequeNumber, final String bankName, final String branchName, final String date) {
-                        serviceRequest = 2;
-                        AsyncRequest asyncRequest = new AsyncRequest(PaymentsActivity.this, "GET", new ArrayList<NameValuePair>(), "Processing Request..");
-                        asyncRequest.execute(WsUrlConstants.cablePaymentUrl.replace(WsUrlConstants.EMPLOYEE_ID, employeeId)
-                                .replace(WsUrlConstants.CUSTOMER_ID, custId)
-                                .replace(WsUrlConstants.AMOUNT, amount)
-                                .replace(WsUrlConstants.TRANSACTION_TYPE, trxnType)
-                                .replace(WsUrlConstants.CHEQUE_NUMBER, chequeNumber)
-                                .replace(WsUrlConstants.BANK_NAME, bankName)
-                                .replace(WsUrlConstants.BRANCH_NAME, branchName)
-                                .replace(WsUrlConstants.TRANSACTION_DATE,date)
-                                .replace(WsUrlConstants.REMARKS, "Remarks"));
+        serviceRequest = 2;
+        AsyncRequest asyncRequest = new AsyncRequest(PaymentsActivity.this, "GET", new ArrayList<NameValuePair>(), "Processing Request..");
+        asyncRequest.execute(WsUrlConstants.cablePaymentUrl.replace(WsUrlConstants.EMPLOYEE_ID, employeeId)
+                .replace(WsUrlConstants.CUSTOMER_ID, custId)
+                .replace(WsUrlConstants.AMOUNT, amount)
+                .replace(WsUrlConstants.TRANSACTION_TYPE, trxnType)
+                .replace(WsUrlConstants.CHEQUE_NUMBER, chequeNumber)
+                .replace(WsUrlConstants.BANK_NAME, bankName)
+                .replace(WsUrlConstants.BRANCH_NAME, branchName)
+                .replace(WsUrlConstants.TRANSACTION_DATE,date)
+                .replace(WsUrlConstants.REMARKS, "Remarks"));
     }
     @Override
     protected void onNewIntent(Intent intent) {
@@ -255,5 +285,10 @@ public class PaymentsActivity extends BaseActivity implements AsyncRequest.OnAsy
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         resetAllViews();
+    }
+    public void getBusinessLogo() {
+        serviceRequest=3;
+        AsyncRequest asyncRequest = new AsyncRequest(this, "GET", new ArrayList<NameValuePair>(), "Fetching Data..");
+        asyncRequest.execute(WsUrlConstants.businessLogoUrl);
     }
 }

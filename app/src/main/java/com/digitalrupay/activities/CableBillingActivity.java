@@ -223,7 +223,6 @@ public class CableBillingActivity extends BaseActivity implements CommunicationL
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
-
     public void navigateToCollections(View view) {
         Intent collections = new Intent(this, CollectionsActivity.class);
         collections.putExtra(WsUrlConstants.LOGIN_TYPE, loginType);

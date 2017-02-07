@@ -46,7 +46,7 @@ public class SettingsActivity extends Activity {
     Button btnScanDevice, backBtnSET;
     TextView stateBluetooth, btaddressTv;
     BluetoothAdapter bluetoothAdapter;
-    private BluetoothAdapter mBluetoothAdapter = null;
+    //    BluetoothAdapter mBluetoothAdapter = null;
     static final UUID MY_UUID = UUID.randomUUID();
 
     String address = "";
@@ -106,7 +106,20 @@ public class SettingsActivity extends Activity {
         listDevicesFound.setAdapter(btArrayAdapter);
 
         bluetoothTXT = (EditText) findViewById(R.id.bluetoothAds);
+        int permissionCheck = 0;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            permissionCheck = this.checkSelfPermission("Manifest.permission.ACCESS_FINE_LOCATION");
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            permissionCheck += this.checkSelfPermission("Manifest.permission.ACCESS_COARSE_LOCATION");
+        }
+        if (permissionCheck != 0) {
 
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                this.requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, 1001); //Any number
+            }
+        }
+        checkPermission();
         CheckBlueToothState();
 
         btnScanDevice.setOnClickListener(btnScanDeviceOnClickListener);
@@ -136,7 +149,7 @@ public class SettingsActivity extends Activity {
                     e.printStackTrace();
                 }
 
-                mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+                bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
                 Alertmessage();
 
             }
@@ -214,7 +227,7 @@ public class SettingsActivity extends Activity {
 
     public void Alertmessage() {
 
-        if (mBluetoothAdapter == null) {
+        if (bluetoothAdapter == null) {
 
             Toast.makeText(this, "Bluetooth is not available.",
                     Toast.LENGTH_LONG).show();
@@ -222,7 +235,7 @@ public class SettingsActivity extends Activity {
             return;
         }
 
-        if (!mBluetoothAdapter.isEnabled()) {
+        if (!bluetoothAdapter.isEnabled()) {
             Toast.makeText(this,
                     "Please enable your BT and re-run this program.",
                     Toast.LENGTH_LONG).show();
@@ -254,5 +267,15 @@ public class SettingsActivity extends Activity {
         }
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        registerReceiver(ActionFoundReceiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
+    }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        unregisterReceiver(ActionFoundReceiver);
+    }
 }

@@ -15,7 +15,7 @@ import static com.digitalrupay.network.WsUrlConstants.CustloginTypes;
 import static com.digitalrupay.network.WsUrlConstants.loginTypes;
 
 /**
- * Created by Umakanth on 9/4/2016.
+ * Created by Santosh on 9/4/2016.
  */
 public class LoginTypeActivity extends BaseActivity {
 

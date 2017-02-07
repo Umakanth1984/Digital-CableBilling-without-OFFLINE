@@ -67,7 +67,8 @@
                     android:id="@+id/fl_parent_login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="navigateToSchool" >
+                    android:onClick="navigateToSchool"
+                    android:visibility="gone">
 
                     <ImageView
                         android:id="@+id/iv_parent"
@@ -86,14 +87,13 @@
                         android:text="@string/parent_login"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="15sp" />
-
                 </FrameLayout>
-
                 <FrameLayout
                     android:id="@+id/fl_school_login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="navigateToSchool">
+                    android:onClick="navigateToSchool"
+                    android:visibility="gone">
 
                     <ImageView
                         android:id="@+id/iv_school"
@@ -144,8 +144,7 @@
                     android:id="@+id/fl_customer_login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="navigateToCustomer"
-                    android:visibility="gone">
+                    android:onClick="navigateToCustomer">
 
                     <ImageView
                         android:id="@+id/iv_customer"
@@ -171,7 +170,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="-30dp">
+                android:layout_marginTop="-30dp"
+                android:visibility="gone">
 
                 <FrameLayout
                     android:layout_width="wrap_content"
