@@ -6,22 +6,18 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.digitalrupay.R;
 import com.digitalrupay.activities.BaseActivity;
 import com.digitalrupay.activities.ComplaintSuccessActivity;
-import com.digitalrupay.adapters.CustomerPagerAdapter;
 import com.digitalrupay.adapters.PaymentPagerAdapter;
 import com.digitalrupay.datamodels.CategoryDataModel;
-import com.digitalrupay.datamodels.ComplaintsDataModel;
 import com.digitalrupay.datamodels.CustomerDataModel;
 import com.digitalrupay.datamodels.CustomerModel;
 import com.digitalrupay.datamodels.PaymentHistoryDataModel;
 import com.digitalrupay.datamodels.SessionData;
-import com.digitalrupay.fragments.ComplaintsHistoryFragment;
-import com.digitalrupay.fragments.PaymentHistoryFragment;
+import com.digitalrupay.activities.Customer.fragment.PaymentHistoryFragment;
 import com.digitalrupay.interfaces.CommunicationListener;
 import com.digitalrupay.network.AsyncRequest;
 import com.digitalrupay.network.WsUrlConstants;
@@ -43,7 +39,7 @@ public class PaymentHistory extends BaseActivity implements  AsyncRequest.OnAsyn
     PaymentPagerAdapter adapter;
     String Customerid;
     AsyncRequest asyncRequest = null;
-    PaymentHistoryFragment complaintsHistoryFragment;
+    PaymentHistoryFragment payHistoryFragment;
     int serviceRequest;
     ArrayList<CategoryDataModel> categoryDataModelArrayList = new ArrayList<>();
     @Override
@@ -70,7 +66,7 @@ public class PaymentHistory extends BaseActivity implements  AsyncRequest.OnAsyn
             public void onTabSelected(TabLayout.Tab tab) {
                 int tabPos = tab.getPosition();
                 viewPager.setCurrentItem(tab.getPosition());
-                complaintsHistoryFragment = (PaymentHistoryFragment) adapter.getFragment(tabPos);
+                payHistoryFragment = (PaymentHistoryFragment) adapter.getFragment(tabPos);
             }
 
             @Override
@@ -84,7 +80,6 @@ public class PaymentHistory extends BaseActivity implements  AsyncRequest.OnAsyn
             }
         });
         CustomerModel customerModel = SessionData.getCustomerLoginResult();
-//        employeeId = customerModel.getemail_id();
         Customerid=customerModel.getcust_id();
         getCategories();
     }
@@ -132,8 +127,8 @@ public class PaymentHistory extends BaseActivity implements  AsyncRequest.OnAsyn
                 }
                 String message = customersObj.getString("message");
                 String text = customersObj.getString("text");
-                complaintsHistoryFragment = (PaymentHistoryFragment) adapter.getFragment(0);
-                if (complaintsHistoryFragment != null) {
+                payHistoryFragment = (PaymentHistoryFragment) adapter.getFragment(0);
+                if (payHistoryFragment != null) {
                     ArrayList<CategoryDataModel> categoryDataModelArrayList = SessionData.getCategoriesList();
                     if (categoryDataModelArrayList.size() > 0 && complaintsDataModelArrayList.size() > 0) {
                         ArrayList<PaymentHistoryDataModel> dummyList = new ArrayList<>();
@@ -149,7 +144,7 @@ public class PaymentHistory extends BaseActivity implements  AsyncRequest.OnAsyn
                         complaintsDataModelArrayList = dummyList;
                     }
                     SessionData.setPaymentHistoryArrayList(complaintsDataModelArrayList);
-                    complaintsHistoryFragment.setComplaints(complaintsDataModelArrayList, message, text);
+                    payHistoryFragment.setComplaints(complaintsDataModelArrayList, message, text);
                 }
 //                getCategories();
             } catch (JSONException e) {

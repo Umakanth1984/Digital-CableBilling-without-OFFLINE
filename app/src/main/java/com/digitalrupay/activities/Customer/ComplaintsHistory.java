@@ -18,8 +18,8 @@ import com.digitalrupay.datamodels.ComplaintsDataModel;
 import com.digitalrupay.datamodels.CustomerDataModel;
 import com.digitalrupay.datamodels.CustomerModel;
 import com.digitalrupay.datamodels.SessionData;
-import com.digitalrupay.fragments.ComplaintsHistoryFragment;
-import com.digitalrupay.fragments.CustomersComplaintsFragment;
+import com.digitalrupay.activities.Customer.fragment.ComplaintsHistoryFragment;
+import com.digitalrupay.activities.Customer.fragment.CustomersComplaintsFragment;
 import com.digitalrupay.interfaces.CommunicationListener;
 import com.digitalrupay.network.AsyncRequest;
 import com.digitalrupay.network.WsUrlConstants;
@@ -50,7 +50,6 @@ public class ComplaintsHistory extends BaseActivity implements  AsyncRequest.OnA
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complaintshisotry);
-        Log.d(WsUrlConstants.LOGIN_TYPE, loginType);
         Toolbar toolbar = (Toolbar) findViewById(R.id.custtoolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Complaints");

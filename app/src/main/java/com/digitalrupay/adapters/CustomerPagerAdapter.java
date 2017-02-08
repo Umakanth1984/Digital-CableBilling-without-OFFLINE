@@ -5,10 +5,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.view.ViewGroup;
 
-import com.digitalrupay.fragments.ComplaintsFragment;
-import com.digitalrupay.fragments.ComplaintsHistoryFragment;
-import com.digitalrupay.fragments.CustomersComplaintsFragment;
-import com.digitalrupay.fragments.RegisterComplaintFragment;
+import com.digitalrupay.activities.Customer.fragment.ComplaintsHistoryFragment;
+import com.digitalrupay.activities.Customer.fragment.CustomersComplaintsFragment;
 
 import java.util.HashMap;
 

@@ -72,7 +72,7 @@ public class WsUrlConstants {
 //    public static String baseEmployeeUrl = "http://srfibernet.digitalrupay.com/webservices/";
 //    public static String baseEmployeeUrl = "http://srisaicable.digitalrupay.com/webservices/";
 //    public static String baseEmployeeUrl = "http://srisaistarcable.digitalrupay.com/webservices/";
-    public static String baseEmployeeUrl = "http://sse.digitalrupay.com/webservices/";
+//    public static String baseEmployeeUrl = "http://sse.digitalrupay.com/webservices/";
 //    public static String baseEmployeeUrl = "http://ssvcnetwork.digitalrupay.com/webservices/";
 //    public static String baseEmployeeUrl = "http://svcn.digitalrupay.com/webservices/";
 //    public static String baseEmployeeUrl = "http://vajrabroadband.digitalrupay.com/webservices/";
@@ -92,7 +92,7 @@ public class WsUrlConstants {
 //    public static String baseEmployeeUrl = "http://bwcablenetwork66.digitalrupay.com/webservices/";
 
 //    public static String baseEmployeeUrl = "http://ganeshstartvnetwork58.digitalrupay.com/webservices/";
-//     public static String baseEmployeeUrl = "http://cablebilling.digitalrupay.com/webservices/";
+     public static String baseEmployeeUrl = "http://cablebilling.digitalrupay.com/webservices/";
 //    public static String baseEmployeeUrl = "http://broadband.digitalrupay.com/webservices/";
 //    public static String baseEmployeeUrl = "http://aptdemo.digitalrupay.com/webservices/";
 //    public static String baseEmployeeUrl = "http://cabledemo1.digitalrupay.com/webservices/";
