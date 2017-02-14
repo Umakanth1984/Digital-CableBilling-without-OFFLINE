@@ -97,7 +97,10 @@ public class PaymentSuccessActivity extends BaseActivity {
                 balance = "-" + (pendingAmt - paidAmt) + "";
             }
         }
-
+        Integer Monthlybill = Integer.parseInt(customerDataModel.getMonthlybill());
+        Integer Pending_amount=Integer.parseInt(customerDataModel.getPending_amount());
+        int totalPreviousbill= Pending_amount - Monthlybill;
+        String Previousbill=""+totalPreviousbill;
         String paymentMode = null;
         if (customerPaymentSuccessModel.getTransaction_type().equalsIgnoreCase("1")) {
             paymentMode = "By Cash";
@@ -167,15 +170,15 @@ public class PaymentSuccessActivity extends BaseActivity {
                     WsUrlConstants.SERVICES_name +"\n"+
                     " "+WsUrlConstants.SERVICE_MOBILE_NUMBER+ "\n" +
                     " "+WsUrlConstants.Adderss+"\n"+
-//                "\n ----------------------- \n "+
                     " Date : " + currentDate +
                     "\n------------------------\n"+
                     "Cust.No : "+customerNumber+
                     "\nName    : "+firstName+" "+lastName +
                     "\nAddr    : " + custAddress +
                     "\nMobile  : " + customerDataModel.getMobile_no() +
-//                "\n\nMonthly Bill : "+customerDataModel.getMonthlybill()+
-                    "\n\nCurrent Due  : "+ customerDataModel.getPending_amount() +
+                    "\n\nPrevious Bill  :"+Previousbill+
+                    "\nMonthly Bill : "+customerDataModel.getMonthlybill()+
+                    "\n\nCurrent Due  : "+ customerDataModel.getPending_amount()+
                     "\n\n------------------------" +
                     "\n Amount paid  : " + customerPaymentSuccessModel.getAmount_paid()
                     +"\n Outstanding  : " + balance +
