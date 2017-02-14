@@ -85,6 +85,31 @@
 
                    </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/ivPrevious_Bill"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <com.digitalrupay.customviews.CustomTextView
+                style="@style/CenturyGothic_regular_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:text="Previous Bill:"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <com.digitalrupay.customviews.CustomTextView
+                android:id="@+id/txtPrevious_Bill"
+                style="@style/CenturyGothic_regular_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight=".5"
+                android:textColor="@color/colorPrimaryDark" />
+
+        </LinearLayout>
+
                    <LinearLayout
                        android:id="@+id/ivAmountDue"
                        android:layout_width="match_parent"

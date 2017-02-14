@@ -51,7 +51,7 @@ import static com.digitalrupay.network.WsUrlConstants.loginTypes;
 
 public class PaymentsListHolder extends RecyclerView.ViewHolder implements AdapterView.OnItemSelectedListener {
 
-    public TextView tvName, tvAddress, tvMobileNumber, tvCurrentDue, tvPreviousDue, tvTotal,tvAmountDue,tvNextPaymentDate;
+    public TextView tvName, tvAddress, tvMobileNumber, txtPrevious_Bill,tvCurrentDue, tvPreviousDue, tvTotal,tvAmountDue,tvNextPaymentDate;
     ImageView ivArrow;
     View view;
     String custNumber,custId,pendingAmt,totalAmtDue,serviceFormat,amount,chequeNumber,bankName,branchName,date,remarks,transactionType,trxnType,employeeId,nexPaymentDate;
@@ -88,6 +88,7 @@ public class PaymentsListHolder extends RecyclerView.ViewHolder implements Adapt
         edtRemarks = (EditText) v.findViewById(R.id.edtRemarks);
         tvNextPaymentDate = (TextView) v.findViewById(R.id.tvNextPaymentDate);
         llTransactionType = (LinearLayout) v.findViewById(R.id.llTransactionType);
+        txtPrevious_Bill=(TextView)v.findViewById(R.id.txtPrevious_Bill);
         edtChequeNumber = (EditText) v.findViewById(R.id.edtChequeNumber);
         edtBankName = (EditText) v.findViewById(R.id.edtBank);
         edtBranchName = (EditText) v.findViewById(R.id.edtBranch);
@@ -188,6 +189,16 @@ public class PaymentsListHolder extends RecyclerView.ViewHolder implements Adapt
                 if (!pendingAmt.contains("-"))
                     edtAmount.setText(pendingAmt);
             }
+            Integer Monthlybill = Integer.parseInt(customerDataModel.getMonthlybill());
+            Integer Pending_amount=Integer.parseInt(customerDataModel.getPending_amount());
+            String Previousbill="";
+            if(Pending_amount>0 ){
+                int totalPreviousbill= Pending_amount - Monthlybill;
+                Previousbill =""+totalPreviousbill;
+            }else{
+                Previousbill="0";
+            }
+            txtPrevious_Bill.setText(Previousbill);
             totalAmtDue = pendingAmt;
         } else {
 //            custId = "";

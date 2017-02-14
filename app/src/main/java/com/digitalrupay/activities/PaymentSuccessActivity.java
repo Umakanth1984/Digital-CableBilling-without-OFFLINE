@@ -99,8 +99,15 @@ public class PaymentSuccessActivity extends BaseActivity {
         }
         Integer Monthlybill = Integer.parseInt(customerDataModel.getMonthlybill());
         Integer Pending_amount=Integer.parseInt(customerDataModel.getPending_amount());
-        int totalPreviousbill= Pending_amount - Monthlybill;
-        String Previousbill=""+totalPreviousbill;
+        String Previousbill="";
+        if(Pending_amount>0 ){
+            int totalPreviousbill= Pending_amount - Monthlybill;
+            Previousbill =""+totalPreviousbill;
+        }else{
+            Previousbill="0";
+        }
+
+
         String paymentMode = null;
         if (customerPaymentSuccessModel.getTransaction_type().equalsIgnoreCase("1")) {
             paymentMode = "By Cash";
