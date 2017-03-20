@@ -90,7 +90,6 @@ public class OnlinePaymentActivity extends BaseActivity implements PaymentResult
             preFill.put("base_url",BaseURL);
             preFill.put("invoice_id",invoice_id);
             options.put("prefill", preFill);
-            Log.e("My Object",""+options);
             co.open(activity, options);
         } catch (Exception e) {
             Toast.makeText(activity, "Error in payment: " + e.getMessage(), Toast.LENGTH_SHORT).show();
