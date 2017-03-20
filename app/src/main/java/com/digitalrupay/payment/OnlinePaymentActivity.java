@@ -42,7 +42,7 @@ import java.util.Iterator;
 
 public class OnlinePaymentActivity extends BaseActivity implements PaymentResultListener,AsyncRequest.OnAsyncRequestComplete {
     private static final String TAG = OnlinePaymentActivity.class.getSimpleName();
-    String custId,amount,chequeNumber,bankName,branchName,date,transactionType,trxnType,email,mobile,business_name,business_email,businessLogo;
+    String custId,amount,chequeNumber,bankName,branchName,date,transactionType,trxnType,email,mobile,business_name,business_email,businessLogo,invoice_id;
     TextView tv_amount,tv_bname;
     AsyncRequest asyncRequest;
     ImageView ivLogo;
@@ -61,6 +61,7 @@ public class OnlinePaymentActivity extends BaseActivity implements PaymentResult
         amount=getIntent().getExtras().getString("amount");
         email=customerData.getemail_id();
         mobile=customerData.getmobile_no();
+        invoice_id=customerData.getcust_id();
         tv_amount.setText("Rs." + amount + "/-");
         payamount=Integer.parseInt(amount)*100;
         getBusinessLogo();
@@ -76,17 +77,20 @@ public class OnlinePaymentActivity extends BaseActivity implements PaymentResult
         final Activity activity = this;
         final Checkout co = new Checkout();
         try {
+            String BaseURL=WsUrlConstants.baseEmployeeUrl;
             JSONObject options = new JSONObject();
             options.put("name", business_name);
             options.put("description", "Monthly  Billing");
             options.put("image",businessLogo);
             options.put("currency", "INR");
             options.put("amount", payamount);
-
             JSONObject preFill = new JSONObject();
             preFill.put("email", email);
             preFill.put("contact", mobile);
+            preFill.put("base_url",BaseURL);
+            preFill.put("invoice_id",invoice_id);
             options.put("prefill", preFill);
+            Log.e("My Object",""+options);
             co.open(activity, options);
         } catch (Exception e) {
             Toast.makeText(activity, "Error in payment: " + e.getMessage(), Toast.LENGTH_SHORT).show();
